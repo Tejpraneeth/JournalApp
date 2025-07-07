@@ -6,9 +6,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-import java.util.Date;
+
+// This class represents a journal entry in the application.
 
 @Data
+// It uses Lombok for boilerplate code reduction.
+// The tag @Data generates getters, setters, equals, hashCode, and toString methods.
 @Document(collection = "journal_entries")
 public class JournalEntry {
 

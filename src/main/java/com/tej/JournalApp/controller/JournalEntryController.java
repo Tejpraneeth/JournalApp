@@ -62,6 +62,7 @@ public class JournalEntryController {
             oldEntry.setTitle(newEntry.getTitle() != null && !newEntry.getTitle().isEmpty() ? newEntry.getTitle() : oldEntry.getTitle());
             oldEntry.setContent(newEntry.getContent() != null && !newEntry.getContent().isEmpty() ? newEntry.getContent() : oldEntry.getContent());
             oldEntry.setDate(LocalDateTime.now()); // Update the date to current time
+            journalEntryService.saveEntry(oldEntry); // Persist the updated entry
             return new ResponseEntity<>(oldEntry, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
